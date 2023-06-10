@@ -2,7 +2,7 @@
     <div class="trailer-container">
         <!-- image background doesn't work ??????????????? -->
         <div
-        :class="'bg-[url('+ imageBackground +')]'"
+        :class="`bg-[url(${imageBackground})]`"
         class="h-40 w-[23%] min-w-[14rem] bg-center bg-cover rounded-2xl overflow-hidden"
         >
         <div
