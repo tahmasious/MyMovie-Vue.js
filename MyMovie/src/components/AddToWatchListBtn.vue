@@ -1,7 +1,8 @@
 <template>
     <a
     href="#"
-    class="text-white text-lg bg-[#ffffff5e] rounded-2xl py-[{{ py }}] px-{{ px }}"
+    :class="[`py-[${py}]`, `px-[${px}]`]"
+    class="text-white text-lg bg-[#ffffff5e] rounded-2xl"
     >
     <img
         src="../assets/plus.png"
