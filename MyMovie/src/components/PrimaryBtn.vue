@@ -3,7 +3,7 @@
     <a
     href="#"
     class="bg-primary rounded-xl inline-block text-white shadow-lg shadow-primary-dark text-sm"
-    :class="['px-[' + px + ']', 'py-[' + py + ']']"
+    :class="[`py-[${py}]`, `px-[${px}]`]"
     ><slot>More Detail</slot></a
     >
 </template>
