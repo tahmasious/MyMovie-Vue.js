@@ -3,6 +3,7 @@
     href="#"
     :class="[`py-[${py}]`, `px-[${px}]`]"
     class="text-white text-lg bg-[#ffffff5e] rounded-2xl"
+    :style="{paddingTop : py, paddingBottom: py, paddingRight: px, paddingLeft: px}"
     >
     <img
         src="../assets/plus.png"
@@ -24,3 +25,8 @@
         }
     })
 </script>
+<style>
+.etst {
+    padding-top: ;
+}
+</style>
