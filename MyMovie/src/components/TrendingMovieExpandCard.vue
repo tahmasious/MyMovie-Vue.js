@@ -11,8 +11,8 @@ export default {
 };
 </script>    -->
 <script setup>
-import AddToWatchListBtn from './AddToWatchListBtn.vue';
-import PrimaryBtn from './PrimaryBtn.vue';
+import AddToWatchListBtn from './general/AddToWatchListBtn.vue';
+import PrimaryBtn from './general/PrimaryBtn.vue';
 defineProps(
     {
         'imdbRate' : String,
