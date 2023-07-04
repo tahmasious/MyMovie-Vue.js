@@ -25,8 +25,3 @@
         }
     })
 </script>
-<style>
-.etst {
-    padding-top: ;
-}
-</style>
