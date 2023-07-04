@@ -1,7 +1,6 @@
 <template>
     <a
     href="#"
-    :class="[`py-[${py}]`, `px-[${px}]`]"
     class="text-white text-lg bg-[#ffffff5e] rounded-2xl"
     :style="{paddingTop : py, paddingBottom: py, paddingRight: px, paddingLeft: px}"
     >

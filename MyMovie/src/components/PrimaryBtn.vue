@@ -3,7 +3,7 @@
     <a
     href="#"
     class="bg-primary rounded-xl inline-block text-white shadow-lg shadow-primary-dark text-sm"
-    :class="[`py-[${py}]`, `px-[${px}]`]"
+    :style="{paddingTop : py, paddingBottom: py, paddingRight: px, paddingLeft: px}"
     ><slot>More Detail</slot></a
     >
 </template>
