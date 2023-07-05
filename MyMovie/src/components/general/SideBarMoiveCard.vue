@@ -17,7 +17,7 @@
             class="imdb rounded-2xl bg-slate-400 inline-block px-1 py-0"
             >
             <img
-                src="../assets/imdb.png"
+                src="../../assets/imdb.png"
                 alt="imdb icon"
                 class="w-6 inline-block rounded-md"
             />

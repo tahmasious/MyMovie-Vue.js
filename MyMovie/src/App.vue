@@ -1,8 +1,11 @@
 <template>
-  <TrendingMovieExpandCard title="The blade runner" imdbRate="8.3" publishYear="2016" backgroundImage="../src/assets/blade-runner.jpg" />
+  <nav-bar-item title="Movie" :isActive="false"></nav-bar-item>
+  <!-- <SideBarMoiveCard title="sag" coverImage="../src/assets/TLOU.jpg" :genres="['hello', 'pass']"></SideBarMoiveCard> -->
 </template>
 
 <script setup>
+import NavBarItem from './components/general/NavBarItem.vue';
+import SideBarMoiveCard from './components/general/SideBarMoiveCard.vue';
 </script>
 
 <style scoped>
