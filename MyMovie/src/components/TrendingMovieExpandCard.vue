@@ -30,18 +30,7 @@ defineProps(
         <div
         class="overlay bg-slate-800 bg-opacity-60 w-full h-full p-4 text-white flex flex-col justify-between"
         >
-        <div>
-            <div
-            class="imdb rounded-2xl bg-slate-400 inline-block px-1 py-0"
-            >
-            <img
-                src="../assets/imdb.png"
-                alt="imdb icon"
-                class="w-6 inline-block rounded-md"
-            />
-            <span>{{ imdbRate }}</span>
-            </div>
-        </div>
+        <ImbdContainer :imdbRate="imdbRate"></ImbdContainer>
         <div class="movie-info">
             <h2>{{ title }}</h2>
             <span class="text-[#CCCCCC]">{{publishYear}}</span>
