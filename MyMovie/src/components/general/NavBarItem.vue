@@ -32,4 +32,9 @@
 .nav-link {
   @apply pl-9 flex items-center text-secondary mt-3 mb-3;
 }
+
+.nav-link:not(.active) {
+  margin-left: 3px;
+}
+
 </style>
