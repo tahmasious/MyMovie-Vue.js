@@ -7,7 +7,7 @@
     <img
         src="../../assets/plus.png"
         alt="#"
-        class="inline-block w-6 h-6"
+        class="inline-block w-6 h-6 rotate-[45deg]"
     />
     </a>
 </template>
