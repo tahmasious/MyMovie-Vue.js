@@ -9,7 +9,7 @@
             alt="imdb icon"
             class="w-6 inline-block rounded-md"
         />
-        <span>{{ imdbRate }}</span>
+        <span class="m-1">{{ imdbRate }}</span>
         </div>
     </div>
 </template>
