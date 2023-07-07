@@ -17,7 +17,7 @@
         </div>
         </a>
         <h3 class="text-white ml-1">{{ title }}</h3>
-    </div>
+      </div>
 </template>
 
 <script setup>
@@ -25,7 +25,7 @@ import { computed,ref } from 'vue';
 import ImbdContainer from './ImbdContainer.vue';
 import {client} from '../../utils';
 import {API_IMAGE_BASE_URL} from '../../constants/api-constants'
-
+import {getGenreNamesByIDs} from '../../utils' ;
 const props = defineProps({
   src: String,
   rating: Number,
@@ -34,15 +34,18 @@ const props = defineProps({
   genreID : String
 })
 const year = computed(() =>  new Date(props.releaseDate).getFullYear())
-const mainGenre = ref();
-const res = client('https://api.themoviedb.org/3/genre/movie/list');
-res.then(data => {
-  for (let genre of data.genres) {
-    if (genre.id == props.genreID){
-      mainGenre.value = genre.name ;
-    }
-  }
-})
+const mainGenre = ref('');
+const res = getGenreNamesByIDs([props.genreID]); 
+res.then(data => mainGenre.value = data[0])
+
+// const res = client('https://api.themoviedb.org/3/genre/movie/list');
+// res.then(data => {
+//   for (let genre of data.genres) {
+//     if (genre.id == props.genreID){
+//       mainGenre.value = genre.name ;
+//     }
+//   }
+// })
 
 </script>
 

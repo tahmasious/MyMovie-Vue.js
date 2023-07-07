@@ -17,3 +17,15 @@ export async function client(url, options){
     }
     return data;
 }
+
+
+export async function getGenreNamesByIDs(ids) {
+    let genreNames = []
+    const res = await client('https://api.themoviedb.org/3/genre/movie/list');
+    for (let genre of res.genres) {
+        if (ids.includes(genre.id)){
+            genreNames.push(genre.name) ;
+        }
+    }
+    return genreNames;
+}

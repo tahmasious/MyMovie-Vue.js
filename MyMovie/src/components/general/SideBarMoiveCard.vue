@@ -2,7 +2,7 @@
     <div class="movie-container flex justify-start gap-2 my-2">
         <div class="movie-poster-container">
         <img
-            :src="coverImage"
+            :src="`${API_IMAGE_BASE_URL}/w154${coverImagePath}`"
             alt=""
             class="w-16 rounded-2xl"
         />
@@ -10,27 +10,23 @@
         <div class="movie-info-container flex flex-col justify-between">
         <div class="movie-name-container">
             <h2 class="text-white">{{ title }}</h2>
-            <h3 class="text-secondary" >{{ getGenres() }}</h3>
+            <h3 class="text-secondary" >{{ genres }}</h3>
         </div>
         <div class="movie-imdb-container text-white">
-            <div
-            class="imdb rounded-2xl bg-slate-400 inline-block px-1 py-0"
-            >
-            <img
-                src="../../assets/imdb.png"
-                alt="imdb icon"
-                class="w-6 inline-block rounded-md"
-            />
-            <span>{{ imdbRate }}</span>
-            </div>
+            <imdbContainer :imdbRate="imdbRate" text-color="white"></imdbContainer>
         </div>
         </div>
     </div>
 </template>
 
 <script setup>
+import { ref } from 'vue';
+import {API_IMAGE_BASE_URL} from '../../constants/api-constants'
+import {getGenreNamesByIDs} from '../../utils' ;
+import imdbContainer from './ImbdContainer.vue' ;
+const genres = ref('')
 const props = defineProps({
-    'coverImage' : {
+    'coverImagePath' : {
         type : String
     },
     'title' : {
@@ -43,13 +39,7 @@ const props = defineProps({
         type : Number
     }
 })
-
-function getGenres() {
-    let result = '';
-    let i = 0;
-    for(; i < props.genres.length - 1; i++)
-        result = result + (props.genres[i] + ', ');
-    result = result + (props.genres[i]);
-    return result;
-}
+console.log(`${props.genres} : ${props.title}`)
+const res = getGenreNamesByIDs(props.genres); 
+res.then(data => genres.value = `${data[0]}, ${data[1]}`)
 </script>
