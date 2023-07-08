@@ -3,7 +3,7 @@
       <div class="flex justify-end p-8 sm:hidden">
         <img
           id="close-menu-btn"
-          src="../static/plus.png"
+          :src="plusIcon"
           class="w-7 h-7 rotate-45"
           alt="close-btn"
         />
@@ -62,6 +62,7 @@
 import LogoContainer from "./LogoContainer.vue";
 import navBarItem from './NavBarItem.vue';
 import tahmasiousPhoto from '../../assets/tahmasious.jpg'
+import plusIcon from '../../assets/plus.png'
 defineProps(['activePage'])
 </script>
 
