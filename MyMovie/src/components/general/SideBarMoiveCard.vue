@@ -9,7 +9,7 @@
         </div>
         <div class="movie-info-container flex flex-col justify-between">
         <div class="movie-name-container">
-            <h2 class="text-white">{{ title }}</h2>
+            <h2 class="text-white w-full md:max-w-[120px]">{{ title }}</h2>
             <h3 class="text-secondary" >{{ genres }}</h3>
         </div>
         <div class="movie-imdb-container text-white">
