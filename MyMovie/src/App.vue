@@ -1,6 +1,12 @@
 <template>
   <div class="bg-[#19191E]">
-    <MainLayOut></MainLayOut>
+    <RowsOfOptionedMovieCards 
+    :options="
+    {'Top Rated' : 'https://api.themoviedb.org/3/movie/popular?language=en-US&page=1', 
+    'Up comming' : 'https://api.themoviedb.org/3/movie/upcoming', 
+    'Now playing' : 'https://api.themoviedb.org/3/movie/now_playing'}">
+      Movies
+    </RowsOfOptionedMovieCards>
   </div>
   <!-- <SideBarMoiveCard title="sag" coverImage="../src/assets/TLOU.jpg" :genres="['hello', 'pass']"></SideBarMoiveCard> -->
 </template>
@@ -20,9 +26,12 @@ import {client} from './utils'
 import { ref } from 'vue';
 import MainLeftSideBar from './components/general/MainLeftSideBar.vue';
 import MainLayOut from './components/general/MainLayOut.vue';
+import RowsOfOptionedMovieCards from './components/general/RowsOfOptionedMovieCards.vue';
 const objs = ref('');
 const res = client('https://api.themoviedb.org/3/movie/popular?language=en-US&page=1');
-res.then(data => objs.value = data.results)
+res.then(data => {
+  console.log(data)
+  return objs.value = data.results})
 
 </script>
 
