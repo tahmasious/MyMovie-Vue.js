@@ -39,11 +39,9 @@
           class="github-link-container bg-[#131519] w-[80%] rounded-2xl table m-auto mt-10"
         >
           <img
-            src="../static/tahmasious.jpg"
+            :src="tahmasiousPhoto"
             alt="owner profile image"
-            width="50px"
-            height="50px"
-            class="rounded-2xl table m-auto relative top-[-20px]"
+            class="rounded-2xl table m-auto relative top-[-20px] w-[50px] h-[50px]"
           />
           <h3 class="m-auto text-slate-500 text-center mt-[-15px]">
             Tahmasious
@@ -63,6 +61,7 @@
 <script setup>
 import LogoContainer from "./LogoContainer.vue";
 import navBarItem from './NavBarItem.vue';
+import tahmasiousPhoto from '../../assets/tahmasious.jpg'
 defineProps(['activePage'])
 </script>
 
