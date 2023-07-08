@@ -1,6 +1,6 @@
 <template>
   <div class="bg-[#19191E]">
-    <MainLeftSideBar active-page="Logout"></MainLeftSideBar>
+    <MainLayOut></MainLayOut>
   </div>
   <!-- <SideBarMoiveCard title="sag" coverImage="../src/assets/TLOU.jpg" :genres="['hello', 'pass']"></SideBarMoiveCard> -->
 </template>
@@ -15,10 +15,11 @@ import ImbdContainer from './components/general/ImbdContainer.vue';
 import MainMovieCardVue from './components/general/MainMovieCard.vue';
 import RowOfMainMovieCard from './components/general/RowOfMainMovieCard.vue'
 import MainRightSideBar from './components/general/MainRightSideBar.vue';
-MainLeftSideBar
+
 import {client} from './utils'
 import { ref } from 'vue';
 import MainLeftSideBar from './components/general/MainLeftSideBar.vue';
+import MainLayOut from './components/general/MainLayOut.vue';
 const objs = ref('');
 const res = client('https://api.themoviedb.org/3/movie/popular?language=en-US&page=1');
 res.then(data => objs.value = data.results)
@@ -26,4 +27,8 @@ res.then(data => objs.value = data.results)
 </script>
 
 <style scoped>
+body {
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
 </style>
