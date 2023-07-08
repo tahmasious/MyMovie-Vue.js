@@ -34,16 +34,12 @@ const upcomingMoives = ref([]);
 
 const res = client('https://api.themoviedb.org/3/movie/top_rated');
 res.then(data => {
-  for(let i = 0 ; i < 3 ; i++){
-    topRatedMovies.value.push(data.results[i])
-  }
+  topRatedMovies.value = data.results.slice(0,3);
 })
 
 const secRes = client('https://api.themoviedb.org/3/movie/upcoming');
 secRes.then(data => {
-  for(let i = 0 ; i < 3 ; i++){
-    upcomingMoives.value.push(data.results[i])
-  }
+  upcomingMoives.value = data.results.slice(0,3);
 })
 
 </script>
