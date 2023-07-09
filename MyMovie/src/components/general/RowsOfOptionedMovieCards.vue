@@ -31,7 +31,7 @@ import {client} from '../../utils'
 const props = defineProps({
     'options' : Object // options must be like : {Popular : https://api-link-to-pop-movies.com/ , "On Tv" : ...}
 })
-console.log(props.options);
+
 const activeTab = ref(Object.keys(props.options)[0])
 const movies = ref('');
 

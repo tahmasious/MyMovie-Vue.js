@@ -39,7 +39,7 @@ const props = defineProps({
         type : Number
     }
 })
-console.log(`${props.genres} : ${props.title}`)
+
 const res = getGenreNamesByIDs(props.genres); 
 res.then(data => genres.value = `${data[0]}, ${data[1]}`)
 </script>

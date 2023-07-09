@@ -1,5 +1,5 @@
 <template>
-  <TestLiveSearch/>
+  <MainLayOut/>
 </template>
 
 <script setup>

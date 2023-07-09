@@ -15,7 +15,6 @@
   const props = defineProps(['title', 'isActive', 'href']);
   const importPath = `../../assets/${props.title}.png`;
   const importPathActive = `../../assets/${props.title}-active.png`;
-  console.log(importPathActive);
   let icon = ref();
   let activeIcon = ref();
   import(importPath).then((module) => icon.value = module.default);
