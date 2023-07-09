@@ -3,7 +3,7 @@
         <div class="movie-poster-container">
         <img
             :src="`${API_IMAGE_BASE_URL}/w154${coverImagePath}`"
-            alt=""
+            :alt="title"
             class="w-16 rounded-2xl"
         />
         </div>
