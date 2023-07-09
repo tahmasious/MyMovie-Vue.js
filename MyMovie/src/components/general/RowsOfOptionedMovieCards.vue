@@ -23,9 +23,9 @@
 
 <script setup>
 import { ref, watch } from 'vue';
-import MainMovieCard from './MainMovieCard.vue';
-import RedLinkBtn from './RedLinkBtn.vue'
-import {client} from '../../utils'
+import MainMovieCard from '@/components/general/MainMovieCard.vue';
+import RedLinkBtn from '@/components/general/RedLinkBtn.vue'
+import {client} from '@/utils'
 
 
 const props = defineProps({

@@ -22,9 +22,9 @@
 
 <script setup>
 import { computed,ref } from 'vue';
-import ImbdContainer from './ImbdContainer.vue';
-import {API_IMAGE_BASE_URL} from '../../constants/api-constants'
-import {getGenreNamesByIDs} from '../../utils' ;
+import ImbdContainer from '@/components/general/ImbdContainer.vue';
+import {API_IMAGE_BASE_URL} from '@/constants/api-constants'
+import {getGenreNamesByIDs} from '@/utils' ;
 const props = defineProps({
   src: String,
   rating: Number,

@@ -5,7 +5,7 @@
     :style="{paddingTop : py, paddingBottom: py, paddingRight: px, paddingLeft: px}"
     >
     <img
-        src="../../assets/plus.png"
+        src="@/assets/plus.png"
         alt="#"
         class="inline-block w-6 h-6"
     />

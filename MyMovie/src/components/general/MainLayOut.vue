@@ -10,8 +10,8 @@
 </template>
 
 <script setup>
-import MainRightSideBar from './MainRightSideBar.vue';
-import MainLeftSideBar from './MainLeftSideBar.vue';
+import MainRightSideBar from '@/components/general/MainRightSideBar.vue';
+import MainLeftSideBar from '@/components/general/MainLeftSideBar.vue';
 </script>
 
 

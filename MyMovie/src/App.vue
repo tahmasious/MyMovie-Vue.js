@@ -16,8 +16,8 @@
 // import {client} from './utils'
 // import { computed, ref, watch } from 'vue';
 // import MainLeftSideBar from './components/general/MainLeftSideBar.vue';
-import TestLiveSearch from './components/TestLiveSearch.vue';
-import MainLayOut from './components/general/MainLayOut.vue';
+import TestLiveSearch from '@/components/TestLiveSearch.vue';
+import MainLayOut from '@/components/general/MainLayOut.vue';
 
 // import RowsOfOptionedMovieCards from './components/general/RowsOfOptionedMovieCards.vue';
 // const objs = ref('');

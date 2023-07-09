@@ -5,7 +5,7 @@
         :style="{color : textColor}"
         >
         <img
-            src="../../assets/imdb.png"
+            src="@/assets/imdb.png"
             alt="imdb icon"
             class="w-6 inline-block rounded-md"
         />

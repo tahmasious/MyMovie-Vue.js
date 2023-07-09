@@ -15,7 +15,7 @@
 
 
 <script setup>
-import MainMovieCard from './MainMovieCard.vue';
+import MainMovieCard from '@/components/general/MainMovieCard.vue';
 
 const props = defineProps({
     'movies' : Object

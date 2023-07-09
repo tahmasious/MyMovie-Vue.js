@@ -24,10 +24,10 @@
 
 <script setup>
 import { ref } from 'vue';
-import {client} from './../../utils.js'
-import SideBarMoiveCard from './SideBarMoiveCard.vue';
-import RedLinkBtn from './RedLinkBtn.vue'
-import {API_BASE_URL} from '../../constants/api-constants'
+import {client} from '@/utils.js'
+import SideBarMoiveCard from '@/components/general/SideBarMoiveCard.vue';
+import RedLinkBtn from '@/components/general/RedLinkBtn.vue'
+import {API_BASE_URL} from '@/constants/api-constants'
 
 const topRatedMovies = ref([]);
 const upcomingMoives = ref([]);

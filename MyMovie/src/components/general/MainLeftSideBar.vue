@@ -52,10 +52,10 @@
 </template>
 
 <script setup>
-import LogoContainer from "./LogoContainer.vue";
-import navBarItem from './NavBarItem.vue';
-import tahmasiousPhoto from '../../assets/tahmasious.jpg'
-import plusIcon from '../../assets/plus.png'
+import LogoContainer from "@/components/general/LogoContainer.vue";
+import navBarItem from '@/components/general/NavBarItem.vue';
+import tahmasiousPhoto from '@/assets/tahmasious.jpg'
+import plusIcon from '@/assets/plus.png'
 defineProps(['activePage'])
 
 const sections = {

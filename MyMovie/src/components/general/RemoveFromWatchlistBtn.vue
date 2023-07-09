@@ -5,8 +5,8 @@
     :style="{paddingTop : py, paddingBottom: py, paddingRight: px, paddingLeft: px}"
     >
     <img
-        src="../../assets/plus.png"
-        alt="#"
+        src="@/assets/plus.png"
+        alt="remove btn"
         class="inline-block w-6 h-6 rotate-[45deg]"
     />
     </a>

@@ -21,9 +21,9 @@
 
 <script setup>
 import { ref } from 'vue';
-import {API_IMAGE_BASE_URL} from '../../constants/api-constants'
-import {getGenreNamesByIDs} from '../../utils' ;
-import imdbContainer from './ImbdContainer.vue' ;
+import {API_IMAGE_BASE_URL} from '@/constants/api-constants'
+import {getGenreNamesByIDs} from '@/utils' ;
+import imdbContainer from '@/components/general/ImbdContainer.vue' ;
 const genres = ref('')
 const props = defineProps({
     'coverImagePath' : {
