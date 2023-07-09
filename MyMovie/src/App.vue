@@ -1,7 +1,5 @@
 <template>
-  <main-lay-out/>
-
-
+  <TestLiveSearch/>
 </template>
 
 <script setup>
@@ -18,7 +16,9 @@
 // import {client} from './utils'
 // import { computed, ref, watch } from 'vue';
 // import MainLeftSideBar from './components/general/MainLeftSideBar.vue';
+import TestLiveSearch from './components/TestLiveSearch.vue';
 import MainLayOut from './components/general/MainLayOut.vue';
+
 // import RowsOfOptionedMovieCards from './components/general/RowsOfOptionedMovieCards.vue';
 // const objs = ref('');
 // const res = client('https://api.themoviedb.org/3/movie/popular?language=en-US&page=1');
