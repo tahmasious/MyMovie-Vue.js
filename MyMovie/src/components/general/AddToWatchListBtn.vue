@@ -2,7 +2,7 @@
     <a
     href="#"
     class="text-white text-lg bg-[#ffffff5e] rounded-2xl"
-    :style="{paddingTop : py, paddingBottom: py, paddingRight: px, paddingLeft: px}"
+    :style="{padding : `${px} ${py}`}"
     >
     <img
         src="@/assets/plus.png"
