@@ -1,7 +1,7 @@
 <template>
     <div>
         <div
-        class="imdb rounded-2xl bg-slate-400 inline-block px-1 py-0"
+        class="bg-opacity-20 rounded-2xl bg-slate-400 inline-block px-1 py-0"
         :style="{color : textColor}"
         >
         <img
@@ -24,9 +24,3 @@ defineProps({
     }
 })
 </script>
-
-<style scoped>
-.imdb {
-  background-color: rgba(255, 255, 255, 0.1);
-}
-</style>
