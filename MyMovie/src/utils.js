@@ -1,4 +1,5 @@
 import {API_READ_ACCESS_TOKEN} from './constants/api-constants'
+import {API_BASE_URL} from './constants/api-constants'
 
 export async function client(url, options){
     const newOptions = {
@@ -21,7 +22,7 @@ export async function client(url, options){
 
 export async function getGenreNamesByIDs(ids) {
     let genreNames = []
-    const res = await client('https://api.themoviedb.org/3/genre/movie/list');
+    const res = await client(`${API_BASE_URL}3/genre/movie/list`);
     for (let genre of res.genres) {
         if (ids.includes(genre.id)){
             genreNames.push(genre.name) ;

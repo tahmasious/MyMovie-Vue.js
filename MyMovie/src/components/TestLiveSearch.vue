@@ -20,6 +20,8 @@
   <script setup>
   import MainMovieCard from './general/MainMovieCard.vue';
   import {client} from '../utils.js'
+  import {API_BASE_URL} from '../constants/api-constants'
+
   import {  ref, watch } from 'vue';
   const searchTerm = ref('')
   const searchResults = ref('');
@@ -27,7 +29,7 @@
   watch(searchTerm, () => {
     if(searchTerm.value.length > 3) {
       isLoading.value = true;
-      const res = client(`https://api.themoviedb.org/3/search/movie?query=${searchTerm.value}&include_adult=false&language=en-US&page=1`);
+      const res = client(`${API_BASE_URL}3/search/movie?query=${searchTerm.value}&include_adult=false&language=en-US&page=1`);
       res.then(data => {
         isLoading.value = false;
         return searchResults.value = data.results

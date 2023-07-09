@@ -27,17 +27,17 @@ import { ref } from 'vue';
 import {client} from './../../utils.js'
 import SideBarMoiveCard from './SideBarMoiveCard.vue';
 import RedLinkBtn from './RedLinkBtn.vue'
-
+import {API_BASE_URL} from '../../constants/api-constants'
 
 const topRatedMovies = ref([]);
 const upcomingMoives = ref([]);
 
-const res = client('https://api.themoviedb.org/3/movie/top_rated');
+const res = client(`${API_BASE_URL}3/movie/top_rated`);
 res.then(data => {
   topRatedMovies.value = data.results.slice(0,3);
 })
 
-const secRes = client('https://api.themoviedb.org/3/movie/upcoming');
+const secRes = client(`${API_BASE_URL}3/movie/upcoming`);
 secRes.then(data => {
   upcomingMoives.value = data.results.slice(0,3);
 })
