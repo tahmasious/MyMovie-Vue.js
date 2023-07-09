@@ -34,12 +34,12 @@ const upcomingMoives = ref([]);
 
 const res = client(`${API_BASE_URL}3/movie/top_rated`);
 res.then(data => {
-  topRatedMovies.value = data.results.slice(0,3);
+  topRatedMovies.value = data.results.slice(0, data.results.length > 3 ? 3 : data.results.length);
 })
 
 const secRes = client(`${API_BASE_URL}3/movie/upcoming`);
 secRes.then(data => {
-  upcomingMoives.value = data.results.slice(0,3);
+  upcomingMoives.value = data.results.slice(0, data.results.length > 3 ? 3 : data.results.length);
 })
 
 </script>
