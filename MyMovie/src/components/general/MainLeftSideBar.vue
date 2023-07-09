@@ -12,22 +12,15 @@
         <!-- logo -->
         <logo-container />
         <!-- main links -->
-        <section class="text-sm pb-3 pt-3">
-          <h2 class="nav-section-header">Personal</h2>
-          <navBarItem title="Home" :is-active="activePage == 'Home'"  href="#" />
-          <navBarItem title="Browse" :is-active="activePage == 'Browse'" href="#" />
-          <navBarItem title="Watchlist" :is-active="activePage == 'Watchlist'" href="#" />
-        </section>
-        <section class="text-sm pb-3 pt-3">
-          <h2 class="nav-section-header">Menu</h2>
-          <navBarItem title="Movies" :is-active="activePage == 'Movies'" href="#" />
-          <navBarItem title="TVshows" :is-active="activePage == 'TVshows'" href="#" />
-          <navBarItem title="People" :is-active="activePage == 'People'" href="#" />
-        </section>
-        <section class="text-sm pb-3 pt-3">
-          <h2 class="nav-section-header">general</h2>
-          <navBarItem title="Setting" :is-active="activePage == 'Setting'" href="#" />
-          <navBarItem title="Logout" :is-active="activePage == 'Logout'" href="#" />
+
+        <section v-for="(section, index) in sections" :key="section" class="text-sm pb-3 pt-3">
+          <h2 class="nav-section-header">{{ index }}</h2>
+          <navBarItem 
+          v-for="item in section" 
+          :key="item" 
+          :title="item" 
+          :is-active="activePage == item"  
+          href="#" />
         </section>
         <!-- notification container -->
         <div class="notification-container">
@@ -64,6 +57,12 @@ import navBarItem from './NavBarItem.vue';
 import tahmasiousPhoto from '../../assets/tahmasious.jpg'
 import plusIcon from '../../assets/plus.png'
 defineProps(['activePage'])
+
+const sections = {
+  'Personal' : ['Home', 'Browse', 'Watchlist'],
+  'Menu' : ['Movies', 'TVshows', 'People'],
+  'general' : ['Setting', 'Logout']
+}
 </script>
 
 <style scoped>
