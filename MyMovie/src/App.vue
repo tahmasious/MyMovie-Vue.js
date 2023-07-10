@@ -1,8 +1,9 @@
 <template>
-  <MainLayOut/>
+  <RouterView />
 </template>
 
 <script setup>
+import {RouterView, RouterLink} from "vue-router";
 // import LogoContainerVue from './components/general/LogoContainer.vue';
 // import NavBarItem from './components/general/NavBarItem.vue';
 // import SideBarMoiveCard from './components/general/SideBarMoiveCard.vue';
@@ -16,9 +17,8 @@
 // import {client} from './utils'
 // import { computed, ref, watch } from 'vue';
 // import MainLeftSideBar from './components/general/MainLeftSideBar.vue';
-import TestLiveSearch from '@/components/TestLiveSearch.vue';
-import MainLayOut from '@/components/general/MainLayOut.vue';
-
+// import MainLayOut from '@/components/general/MainLayOut.vue';
+// import HomePage from '@/components/homepage/HomePage.vue';
 // import RowsOfOptionedMovieCards from './components/general/RowsOfOptionedMovieCards.vue';
 // const objs = ref('');
 // const res = client('https://api.themoviedb.org/3/movie/popular?language=en-US&page=1');
@@ -28,10 +28,3 @@ import MainLayOut from '@/components/general/MainLayOut.vue';
 
 
 </script>
-
-<style scoped>
-body {
-  box-sizing: border-box;
-  font-family: "Poppins", sans-serif;
-}
-</style>
