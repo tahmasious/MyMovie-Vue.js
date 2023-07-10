@@ -3,7 +3,7 @@
         <main class="w-[100%] p-8">
             <suggestion-box title="Hello mother fucker"></suggestion-box>
             <rows-of-trailers :options="options" />
-            <RowsOfTrendingMovies>Trending movies</RowsOfTrendingMovies>>
+            <RowsOfTrendingMovies>Trending movies</RowsOfTrendingMovies>
         </main>
     </MainLayOut>
 </template>
