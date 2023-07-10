@@ -1,10 +1,11 @@
 <template>
     <div class="bg-slate-500 flex">
       <main-left-side-bar active-page="Home" />  
-      
+      <slot>
         <main class="w-[100%] p-8">
-            <h1>Hello</h1>
+            <h1 class="text-white">Error fetching page</h1>
         </main>
+      </slot>
       <main-right-side-bar /> 
     </div>
 </template>
