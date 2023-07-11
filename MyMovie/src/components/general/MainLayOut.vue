@@ -1,6 +1,6 @@
 <template>
     <div class="bg-slate-500 flex">
-      <main-left-side-bar active-page="Home" />  
+      <main-left-side-bar/>  
       <slot>
         <main class="w-[100%] p-8">
             <h1 class="text-white">Error fetching page</h1>

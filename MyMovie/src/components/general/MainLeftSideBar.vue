@@ -18,9 +18,7 @@
           <navBarItem 
           v-for="item in section" 
           :key="item" 
-          :title="item" 
-          :is-active="activePage == item"  
-          href="#" />
+          :title="item" />
         </section>
         <!-- notification container -->
         <div class="notification-container">
@@ -56,7 +54,6 @@ import LogoContainer from "@/components/general/LogoContainer.vue";
 import navBarItem from '@/components/general/NavBarItem.vue';
 import tahmasiousPhoto from '@/assets/tahmasious.jpg'
 import plusIcon from '@/assets/plus.png'
-defineProps(['activePage'])
 
 const sections = {
   'Personal' : ['Home', 'Browse', 'Watchlist'],
