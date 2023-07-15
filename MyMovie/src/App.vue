@@ -1,5 +1,6 @@
 <template>
-  <RouterView />
+  <!-- <RouterView /> -->
+  <TestLiveSearch />
 </template>
 
 <script setup>
@@ -13,7 +14,7 @@ import {RouterView, RouterLink} from "vue-router";
 // import MainMovieCard from './components/general/MainMovieCard.vue';
 // import RowOfMainMovieCard from './components/general/RowOfMainMovieCard.vue'
 // import MainRightSideBar from './components/general/MainRightSideBar.vue';
-
+// import TestLiveSearch from './components/homepage/TestLiveSearch.vue'
 // import {client} from './utils'
 // import { computed, ref, watch } from 'vue';
 // import MainLeftSideBar from './components/general/MainLeftSideBar.vue';

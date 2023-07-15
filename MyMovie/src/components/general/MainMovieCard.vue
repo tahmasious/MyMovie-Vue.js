@@ -34,7 +34,7 @@ const props = defineProps({
 })
 const year = computed(() =>  new Date(props.releaseDate).getFullYear())
 const mainGenre = ref('');
-const res = getGenreNamesByIDs([props.genreID]); 
+const res = getGenreNamesByIDs([props.genreID]);
 res.then(data => mainGenre.value = data[0])
 </script>
 

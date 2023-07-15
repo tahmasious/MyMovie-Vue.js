@@ -12,9 +12,9 @@
         <div class="flex flex-wrap justify-between">
         <div v-for="movie in movies" :key="movie.id">
             <MainMovieCard 
-            :genreID="movie.genre_ids[0]" :title="movie.title" 
+            :genreID="movie.genre_ids[0]" :title="movie.title ? movie.title : movie.name" 
             :src="movie.poster_path" :rating="movie.vote_average" 
-            :releaseDate="movie.release_date"/>
+            :releaseDate="movie.release_date ? movie.release_date : movie.first_air_date"/>
           </div>
         </div>
       </section>
