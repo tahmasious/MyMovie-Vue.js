@@ -64,7 +64,6 @@ onMounted(() => {
     interval = setInterval(function() {
         // updating active movei
         activeMovie.value = nowPlaying.value[(counter++) % 4];
-        console.log("hello world")
     }, 5000);
 });
 
