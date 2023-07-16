@@ -20,7 +20,6 @@ import TrendingSearchSingleItem from './TrendingSearchSingleItem.vue';
 const trendingList = ref('')
 const res = client(`${API_BASE_URL}3/trending/all/day?language=en-US`);
 res.then(data => {
-    console.log(data.results)
     trendingList.value = data.results.slice(0,7);
 })
 </script>

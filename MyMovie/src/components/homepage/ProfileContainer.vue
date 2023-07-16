@@ -29,18 +29,21 @@
 
 
 <script setup>
-import {API_BASE_URL,API_IMAGE_BASE_URL} from '@/constants/api-constants';
-import {client} from '@/utils.js'
-import { ref } from 'vue';
+import {API_IMAGE_BASE_URL} from '@/constants/api-constants';
+import { computed, inject, ref } from 'vue';
 import { RouterLink } from 'vue-router';
+import profilePlaceHolder from '@/assets/profile_placeholder.png';
+const userInfo = inject('user');
+console.log(userInfo.value.avatar.tmdb.avatar_path)
 
-const userInfo = ref('')
-const Image = ref('')
-const res = client(`${API_BASE_URL}3/account/19535598`); // How to get Account id ? its hard coded now !
-res.then(async data => {
-    Image.value = await getProfilePic(data);
-    userInfo.value = data;
+const Image = computed(() => {
+  if (userInfo.value.avatar.tmdb.avatar_path == undefined){
+        return profilePlaceHolder ;
+    }else {
+        return `${API_IMAGE_BASE_URL}/w185${userInfo.value.avatar.tmdb.avatar_path}`
+    }
 })
+
 
 
 async function getProfilePic(data) {
