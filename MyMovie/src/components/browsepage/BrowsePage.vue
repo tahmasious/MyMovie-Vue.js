@@ -33,7 +33,8 @@
                 </div>
             </section>
             <RowsOfOptionedMovieCards :options="firstRowOptions">Movies</RowsOfOptionedMovieCards>    
-            <RowsOfOptionedMovieCards :options="secondRowOptions">TV shows</RowsOfOptionedMovieCards>    
+            <RowsOfOptionedMovieCards :options="secondRowOptions">TV shows</RowsOfOptionedMovieCards>   
+            <RowsOfPeopleCard /> 
         </main>
         <!-- side bar slot -->
         <template #aside>
@@ -50,6 +51,7 @@ import GlassySearchBarVue from '@/components/general/GlassySearchBar.vue';
 import BrowseRightSideBar from '@/components/browsepage/BrowseRightSideBar.vue';
 import { API_BASE_URL, API_IMAGE_BASE_URL } from '@/constants/api-constants';
 import RowsOfOptionedMovieCards from '@/components/general/RowsOfOptionedMovieCards.vue'
+import RowsOfPeopleCard from './RowsOfPeopleCard.vue';
 const nowPlaying = ref('');
 const activeMovie = ref('')
 let counter = 0;
