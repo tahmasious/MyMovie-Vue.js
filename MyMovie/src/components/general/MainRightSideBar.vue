@@ -5,7 +5,13 @@
         <section>
           <h2 class="mb-4 text-white">Top rated movies</h2>
           <div class="top-rated-movies text-sm">
-            <SideBarMoiveCard v-for="movie in topRatedMovies" :key="movie.id" :cover-image-path="movie.poster_path" :title="movie.title" :genres="movie.genre_ids" :imdb-rate="movie.vote_average"/>
+            <SideBarMoiveCard v-for="movie in topRatedMovies" :key="movie.id" 
+            :cover-image-path="movie.poster_path" 
+            :title="movie.title" 
+            :genres="movie.genre_ids" 
+            :imdb-rate="movie.vote_average"
+            :movieID="movie.id"
+            />
           </div>
           <RedLinkBtn text="see all" href="#" />
         </section>
@@ -13,7 +19,14 @@
         <section>
           <h2 class="mb-4 text-white">Upcoming movies</h2>
           <div class="upcoming-movies text-sm">
-            <SideBarMoiveCard v-for="movie in upcomingMoives" :key="movie.id" :cover-image-path="movie.poster_path" :title="movie.title" :genres="movie.genre_ids" :imdb-rate="movie.vote_average"/>
+            <SideBarMoiveCard v-for="movie in upcomingMoives" 
+            :key="movie.id" 
+            :cover-image-path="movie.poster_path" 
+            :title="movie.title" 
+            :genres="movie.genre_ids" 
+            :imdb-rate="movie.vote_average"
+            :movieID="movie.id"
+            />
           </div>
           <RedLinkBtn text="see all" href="#" />
         </section>

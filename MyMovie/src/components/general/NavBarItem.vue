@@ -13,7 +13,7 @@
 
 <script setup>
   import { defineProps, ref } from 'vue';
-
+  import { RouterLink } from 'vue-router';
   const props = defineProps(['title']);
   const importPath = `../../assets/${props.title}.png`;
   const importPathActive = `../../assets/${props.title}-active.png`;

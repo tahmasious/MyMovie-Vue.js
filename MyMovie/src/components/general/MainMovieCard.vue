@@ -1,6 +1,6 @@
 <template>
     <div class="w-[150px]">
-        <a class="thumbnail-image relative">
+        <router-link :to="{name : 'movieDetail', params : {id : MovieID}}" class="thumbnail-image relative">
         <img
             :src="`${API_IMAGE_BASE_URL}/w154${src}`"
             alt="movie poster"
@@ -15,7 +15,7 @@
             <div class="genre">{{mainGenre}}</div>
             <div class="more-infos">{{ year }} - America</div>
         </div>
-        </a>
+        </router-link>
         <h3 class="text-white ml-1">{{ title }}</h3>
       </div>
 </template>
@@ -25,7 +25,10 @@ import { computed,ref } from 'vue';
 import ImbdContainer from '@/components/general/ImbdContainer.vue';
 import {API_IMAGE_BASE_URL} from '@/constants/api-constants'
 import {getGenreNamesByIDs} from '@/utils' ;
+import { RouterLink } from 'vue-router';
+
 const props = defineProps({
+  MovieID : String,
   src: String,
   rating: Number,
   releaseDate: String,
