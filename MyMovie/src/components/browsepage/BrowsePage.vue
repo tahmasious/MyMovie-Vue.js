@@ -20,14 +20,14 @@
                     <h2 class="text-white text-4xl pb-3 pt-px">{{activeMovie.title}}</h2>
                     <div class="flex justify-between">
                     <!-- a trend movie -->
-                    <div class="trend-movie-container" v-for="movie in nowPlaying" :key="movie.id">
+                    <router-link :to="{name : 'movieDetail', params: {id : movie.id}}" class="trend-movie-container" v-for="movie in nowPlaying" :key="movie.id">
                         <img
                         :src="`${API_IMAGE_BASE_URL}/w154${movie.poster_path}`"
                         alt="movie cover"
                         :class="{'selected' : movie.id == activeMovie.id}"
                         class="trend-movie"
                         />
-                    </div>
+                    </router-link>
                     </div>
                 </section>
                 </div>
