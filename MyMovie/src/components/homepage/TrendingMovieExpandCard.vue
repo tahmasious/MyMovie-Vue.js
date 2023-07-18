@@ -8,7 +8,8 @@ defineProps(
         'imdbRate' : String,
         'title' : String,
         'publishYear' : String,
-        'backgroundImage' : String
+        'backgroundImage' : String,
+        'movieID' : String
     }
 );
 </script>
@@ -25,7 +26,7 @@ defineProps(
             <h2>{{ title }}</h2>
             <span class="text-[#CCCCCC]">{{publishYear}}</span>
             <div class="flex justify-between items-center">
-            <primary-btn  px="7px" py="10px" />
+            <primary-btn :href="{name : 'movieDetail', params : {id : movieID}}"  px="7px" py="10px" />
             <add-to-watch-list-btn px="5px" py="7px"></add-to-watch-list-btn>
             </div>
         </div>

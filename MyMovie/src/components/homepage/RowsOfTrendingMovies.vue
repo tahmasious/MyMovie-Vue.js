@@ -10,7 +10,9 @@
             :title="movie.title" 
             :backgroundImage="movie.backdrop_path" 
             :imdbRate="movie.vote_average" 
-            :publishYear="new Date(movie.release_date).getFullYear()"/>
+            :publishYear="new Date(movie.release_date).getFullYear()"
+            :movieID="movie.id"
+            />
           </div>
         </section>
       </section>
