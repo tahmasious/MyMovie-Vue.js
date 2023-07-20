@@ -34,7 +34,6 @@ import { computed, inject, ref } from 'vue';
 import { RouterLink } from 'vue-router';
 import profilePlaceHolder from '@/assets/profile_placeholder.png';
 const userInfo = inject('user');
-console.log(userInfo.value.avatar.tmdb.avatar_path)
 
 const Image = computed(() => {
   if (userInfo.value.avatar.tmdb.avatar_path == undefined){

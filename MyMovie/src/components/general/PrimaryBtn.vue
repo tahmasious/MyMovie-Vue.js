@@ -22,5 +22,4 @@ const props = defineProps({
         type : Object
     }
 })
-console.log(props.href);
 </script>
