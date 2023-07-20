@@ -51,7 +51,7 @@
               </div>
               <div class="flex justify-between gap-3">
                 <!-- add to watchlist btn -->
-                <AddToWatchListBtn :isGlassy="true"></AddToWatchListBtn>
+                <AddToWatchListBtn media_type="movie" :media_id="data.id" :isGlassy="true"></AddToWatchListBtn>
                 <!-- rate btn -->
                 <AddRating />
               </div>
