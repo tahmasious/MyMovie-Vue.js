@@ -153,6 +153,8 @@
         <MediaSectionVue />
         <NotableCastSection />
         <RowOfMainMovieCard />
+        
+        <RecommendedMovies  /> 
       </div>
     </main>    
 </MainLayOut>
@@ -160,11 +162,12 @@
 
 <script setup>
 import { useRoute } from 'vue-router';
+import RecommendedMovies from '@/components/singlemoviepage/RecommendedMovies.vue'
 import MainLayOut from '@/components/general/MainLayOut.vue';
 import RowOfMainMovieCard from '@/components/general/RowOfMainMovieCard.vue';
 import {useFetch} from '@/composable/useFetch.js'
 import {API_BASE_URL , API_IMAGE_BASE_URL} from '@/constants/api-constants'
-import { computed, watch } from 'vue';
+import { computed, ref, watch } from 'vue';
 import LoadingGif from '@/assets/loader.gif'
 import GlassySearchBarVue from '@/components/general/GlassySearchBar.vue';
 import AddToWatchListBtn from '@/components/general/AddToWatchListBtn.vue';
