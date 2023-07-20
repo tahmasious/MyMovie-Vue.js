@@ -16,7 +16,4 @@ import { watch } from 'vue';
 const {data ,isLoading, error, fetchWrapper} = useFetch({'cast' : []})
 const route = useRoute(); 
 fetchWrapper(`${API_BASE_URL}3/movie/${route.params.id}/credits`)
-watch(data, () => {
-    console.log(data.value.cast);
-})
 </script>
