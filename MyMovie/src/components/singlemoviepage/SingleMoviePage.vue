@@ -150,79 +150,8 @@
             {{ data.overview }}
           </p>
         </section>
-        <section class="media mb-6 w-full md:w-full">
-          <h2 class="text-secondary mb-2">MEDIA</h2>
-          <div
-            class="selector-container mb-3 text-secondary flex justify-start gap-4 text-md"
-          >
-            <span class="active-selector">Most popular</span>
-            <span>Videos</span>
-            <span>Backdrops</span>
-            <span>Posters</span>
-          </div>
-          <div
-            class="w-full scroller flex rounded-lg pb-2 overflow-x-scroll overflow-y-hidden whitespace-nowrap"
-          >
-            <img
-              src="@/assets/movie-snapshot/stranger-things.jpg"
-              alt=""
-              class="h-44"
-            />
-            <img
-              src="@/assets/movie-snapshot/stranger-things-2.jpg"
-              alt=""
-              class="h-44"
-            /><img
-              src="@/assets/movie-snapshot/stranger-things-3.jpg"
-              alt=""
-              class="h-44"
-            /><img
-              src="@/assets/movie-snapshot/stranger-things-4.jpg"
-              alt=""
-              class="h-44"
-            /><img
-              src="@/assets/movie-snapshot/stranger-things-5.jpg"
-              alt=""
-              class="h-44"
-            /><img
-              src="@/assets/movie-snapshot/stranger-things-6.jpg"
-              alt=""
-              class="h-44"
-            />
-          </div>
-        </section>
-        <section class="notable-cast mb-6">
-          <h2 class="text-secondary mb-2">NOTABLE CAST</h2>
-          <!-- a cast  -->
-          <div class="inline-flex flex-col justify-start items-center mr-3">
-            <img
-              src="@/assets/cast-profile/sadi-sink.jpg"
-              alt="cast profile"
-              class="w-[55px] h-[55px] rounded-full object-cover"
-            />
-            <span class="text-white text-sm">Sadie Sink</span>
-          </div>
-
-          <!-- a cast  -->
-          <div class="inline-flex flex-col justify-start items-center mx-3">
-            <img
-              src="@/assets/cast-profile/mbb.jpg"
-              alt="cast profile"
-              class="w-[55px] h-[55px] rounded-full object-cover"
-            />
-            <span class="text-white text-sm">Millie Bobby</span>
-          </div>
-
-          <!-- a cast  -->
-          <div class="inline-flex flex-col justify-start items-center mx-3">
-            <img
-              src="@/assets/cast-profile/Caleb_McLaughlin_by_Gage_Skidmore.jpg"
-              alt="cast profile"
-              class="w-[55px] h-[55px] rounded-full object-cover"
-            />
-            <span class="text-white text-sm">Caleb McLaughlin </span>
-          </div>
-        </section>
+        <MediaSectionVue />
+        <NotableCastSection />
         <RowOfMainMovieCard />
       </div>
     </main>    
@@ -237,11 +166,14 @@ import {useFetch} from '@/composable/useFetch.js'
 import {API_BASE_URL , API_IMAGE_BASE_URL} from '@/constants/api-constants'
 import { computed, watch } from 'vue';
 import LoadingGif from '@/assets/loader.gif'
-import GlassySearchBarVue from '../general/GlassySearchBar.vue';
-import AddToWatchListBtn from '@/components/general/AddToWatchListBtn.vue'
+import GlassySearchBarVue from '@/components/general/GlassySearchBar.vue';
+import AddToWatchListBtn from '@/components/general/AddToWatchListBtn.vue';
+import MediaSectionVue from '@/components/singlemoviepage/MediaSection.vue';
+import NotableCastSection from './NotableCastSection.vue';
 
 const route = useRoute(); 
 const {data ,isLoading, error, fetchWrapper} = useFetch()
+
 
 
 watch(() => route.params.id , () => {
@@ -364,9 +296,7 @@ function goBack() {
   border: 1px solid rgba(255, 255, 255, 0.3);
 }
 
-.active-selector {
-  color: #d91f27;
-}
+
 
 .bg-white-glass {
   background: rgba(255, 255, 255, 0.55);
