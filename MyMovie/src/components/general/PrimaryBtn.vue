@@ -19,7 +19,8 @@ const props = defineProps({
         default : '12px'
     },
     'href' : {
-        type : Object
+        type : Object,
+        default : '#'
     }
 })
 </script>
