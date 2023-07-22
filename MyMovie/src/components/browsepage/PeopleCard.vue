@@ -1,9 +1,9 @@
 <template>
     <a class="thumbnail-image relative mb-3" href="./people-retrieve.html">
         <img
-        :src="`${API_IMAGE_BASE_URL}/w154${imagePath}`"
+        :src="imageFinalPath"
         alt="movie poster"
-        class="movie-poster"
+        class="movie-poster w-[150px] h-[230px]"
         />
         <div
         class="overlay-desc absolute top-0 left-0 rounded-2xl w-full h-full p-3 flex items-center justify-between flex-col gap-1 transition-all opacity-0"
@@ -21,7 +21,17 @@
 
 <script setup>
 import {API_IMAGE_BASE_URL} from '@/constants/api-constants'
+import { computed } from 'vue';
+import defaultImage from '@/assets/profile_placeholder.png'
 const props = defineProps(['name', 'knownCredit', 'imagePath']);
+
+
+const imageFinalPath = computed(() => {
+    if (props.imagePath) {
+        return `${API_IMAGE_BASE_URL}/w154${props.imagePath}`
+    }
+    return defaultImage;
+})
 </script>
 
 <style scoped>
