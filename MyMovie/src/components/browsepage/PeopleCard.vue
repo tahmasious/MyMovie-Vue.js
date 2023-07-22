@@ -1,5 +1,5 @@
 <template>
-    <a class="thumbnail-image relative mb-3" href="./people-retrieve.html">
+    <router-link :to="{name : 'person', params : {id : personID}}" class="thumbnail-image relative mb-3" href="./people-retrieve.html">
         <img
         :src="imageFinalPath"
         alt="movie poster"
@@ -16,14 +16,14 @@
             <div class="text-center">known credit</div>
         </div>
         </div>
-    </a>
+    </router-link>
 </template>
 
 <script setup>
 import {API_IMAGE_BASE_URL} from '@/constants/api-constants'
 import { computed } from 'vue';
 import defaultImage from '@/assets/profile_placeholder.png'
-const props = defineProps(['name', 'knownCredit', 'imagePath']);
+const props = defineProps(['name', 'knownCredit', 'imagePath', 'personID']);
 
 
 const imageFinalPath = computed(() => {

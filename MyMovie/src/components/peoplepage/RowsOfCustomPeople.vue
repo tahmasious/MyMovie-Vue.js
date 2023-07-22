@@ -12,6 +12,7 @@
                 :name="person.name"
                 :image-path="person.profile_path"
                 :known-credit="person.popularity"
+                :personID="person.id"
             />
         </div>
         <div class="flex justify-center p-4">

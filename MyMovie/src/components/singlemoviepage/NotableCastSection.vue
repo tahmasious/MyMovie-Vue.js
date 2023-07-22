@@ -2,7 +2,7 @@
     <section class="mb-6">
         <h2 class="text-secondary mb-2">NOTABLE CAST</h2>
         <div class="flex flex-wrap justify-start">
-            <SingleCast v-for="cast in data.cast.slice(0,10)" :key="cast.id" :name="cast.name" :profile_path="cast.profile_path" />
+            <SingleCast  v-for="cast in data.cast.slice(0,10)" :key="cast.id" :personID="cast.id" :name="cast.name" :profile_path="cast.profile_path" />
         </div>
     </section>
 </template>
