@@ -11,7 +11,6 @@ export async function client(url, options, method = 'GET'){
             Authorization: `Bearer ${API_READ_ACCESS_TOKEN}`  
         }
     }
-    console.log(newOptions);
     const response = await fetch(url, newOptions);
     const data = await response.json();
     if(!response.ok){
