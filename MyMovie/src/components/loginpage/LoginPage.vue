@@ -16,7 +16,7 @@
             My movie<strong class="text-[35px] text-primary">.</strong>
           </h1>
         </div>
-        <div v-if="inject('is_logged')">
+        <div v-if="isLogged">
           <h1 class="text-white text-3xl">Already logged in !</h1>
         </div>
         <form
@@ -57,7 +57,8 @@
 import Logo from '@/assets/logo.png'
 import { ref, inject } from 'vue'
 import { useRouter } from 'vue-router';
-
+const isLogged = inject('is_logged').value;
+console.log(isLogged.value);
 const username = ref('');
 const password = ref('');
 const router = useRouter()

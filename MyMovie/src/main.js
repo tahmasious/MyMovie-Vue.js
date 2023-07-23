@@ -8,7 +8,7 @@ const app = createApp(App)
 app.use(router)
 useAuth(app)
 router.beforeEach((to, from) => {
-    if (to.meta.requiresLogin && !inject('is_logged')){
+    if (to.meta.requiresLogin && !inject('is_logged').value){
         router.push({name : 'login'})
     }
 })

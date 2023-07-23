@@ -1,4 +1,4 @@
-import {computed} from 'vue';
+import {computed, ref} from 'vue';
 import { API_BASE_URL, API_READ_ACCESS_TOKEN, API_VERSION } from '@/constants/api-constants'
 import {
   CREATE_REQUEST_TOKEN_URL,
@@ -10,7 +10,9 @@ import {
 export function useAuth(app) {
     const LOGIN = 'login'
     const USER = 'user'
-    
+    const LOGOUT = 'logout'
+    const isLogged = ref(false)
+
     const userID = computed({
         get : () => JSON.parse(sessionStorage.getItem(USER) || 'null'),
         set : (val) => sessionStorage.setItem(USER, JSON.stringify(val))
@@ -98,9 +100,17 @@ export function useAuth(app) {
         await validateWithLogin(requestToken, username, password)
         await createSession(requestToken)
         userID.value =  await getAccountData()
+        isLogged.value = true
     }
 
-    app.provide('is_logged', userID.value != null)
+    function logout() {
+        sessionStorage.clear()
+        isLogged.value = false;
+    }
+    
+    app.provide('is_logged', isLogged)
     app.provide(LOGIN, login);
+    app.provide(LOGOUT, logout)
     app.provide(USER, userID)
+
 }
