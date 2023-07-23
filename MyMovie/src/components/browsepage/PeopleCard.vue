@@ -1,5 +1,5 @@
 <template>
-    <router-link :to="{name : 'person', params : {id : personID}}" class="thumbnail-image relative mb-3" href="./people-retrieve.html">
+    <router-link :to="{name : 'person', params : {id : personID}}" class="thumbnail-image relative mb-3">
         <img
         :src="imageFinalPath"
         alt="movie poster"
