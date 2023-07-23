@@ -2,11 +2,11 @@
     <MainLayOut>
         <main class="w-full">
             <section class="content p-16 pb-0">
-                <div class="w-full sm:flex block gap-7 mb-6">
+                <div class="w-full sm:flex block items-start gap-7 mb-6">
                     <img
                         :src="`${API_IMAGE_BASE_URL}/w342${data.profile_path}`"
                         alt="celeb profile"
-                        class="rounded-3xl w-[342px ] sm:w-[25%]"
+                        class="rounded-3xl w-ful sm:w-[25%]"
                     />
                     <div class="bio">
                         <h1 class="mb-4 text-white text-[30px]">{{ data.name }}</h1>
