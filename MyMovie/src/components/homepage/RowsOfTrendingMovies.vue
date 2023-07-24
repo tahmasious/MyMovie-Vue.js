@@ -7,11 +7,7 @@
           <div class="flex justify-between flex-wrap">
             <TrendingMovieExpandCard 
             v-for="movie in movies" :key="movie.id"
-            :title="movie.title" 
-            :backgroundImage="movie.backdrop_path" 
-            :imdbRate="movie.vote_average" 
-            :publishYear="new Date(movie.release_date).getFullYear()"
-            :movieID="movie.id"
+            :movie="movie"
             />
           </div>
         </section>
