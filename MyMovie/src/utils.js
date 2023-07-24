@@ -1,10 +1,10 @@
 import {API_READ_ACCESS_TOKEN} from './constants/api-constants'
 import {API_BASE_URL} from './constants/api-constants'
 
-export async function client(url, options){
+export async function client(url, options, method = 'GET'){
     const newOptions = {
-        method : 'GET',
-        ...options,
+        method : method,
+        body : JSON.stringify(options),
         headers : {
             accept: 'application/json',
             'content-type': 'application/json',

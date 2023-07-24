@@ -1,5 +1,5 @@
 <template>
-    <div class="movie-container flex justify-start gap-2 my-2">
+    <router-link :to="{name : 'movieDetail', params : {id : movieID}}" class="movie-container flex justify-start gap-2 my-2">
         <div class="movie-poster-container">
         <img
             :src="`${API_IMAGE_BASE_URL}/w154${coverImagePath}`"
@@ -16,7 +16,7 @@
             <imdbContainer :imdbRate="imdbRate" text-color="white"></imdbContainer>
         </div>
         </div>
-    </div>
+    </router-link>
 </template>
 
 <script setup>
@@ -24,6 +24,7 @@ import { ref } from 'vue';
 import {API_IMAGE_BASE_URL} from '@/constants/api-constants'
 import {getGenreNamesByIDs} from '@/utils' ;
 import imdbContainer from '@/components/general/ImbdContainer.vue' ;
+import { RouterLink } from 'vue-router';
 const genres = ref('')
 const props = defineProps({
     'coverImagePath' : {
@@ -37,7 +38,10 @@ const props = defineProps({
     },
     'imdbRate' : {
         type : Number
-    }
+    },
+    'movieID' : {
+        type : String
+    },
 })
 
 const res = getGenreNamesByIDs(props.genres); 

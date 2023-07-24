@@ -1,18 +1,20 @@
 <template>
-  <a class="nav-link" :class="{ active: isActive }" :href="href">
-    <img
+  <router-link :to="{name : title.toLowerCase()}" v-slot="{ isActive }" >
+    <div :class="{ active: isActive }" class="w-full nav-link">
+      <img
       :src="isActive ? activeIcon : icon"
       :alt="`${title} icon`"
       class="w-4 h-4 inline mr-3"
     />
     <span>{{ title }}</span>
-  </a>
+    </div>
+  </router-link>
 </template>
 
 <script setup>
   import { defineProps, ref } from 'vue';
-
-  const props = defineProps(['title', 'isActive', 'href']);
+  import { RouterLink } from 'vue-router';
+  const props = defineProps(['title']);
   const importPath = `../../assets/${props.title}.png`;
   const importPathActive = `../../assets/${props.title}-active.png`;
   let icon = ref();

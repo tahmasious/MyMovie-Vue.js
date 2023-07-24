@@ -1,11 +1,16 @@
 <template>
-    <div class="bg-slate-500 flex">
-      <main-left-side-bar active-page="Home" />  
-      
+    <div class="bg-slate-500 flex">    
+      <slot name="nav">
+        <main-left-side-bar/> 
+      </slot>
+      <slot>
         <main class="w-[100%] p-8">
-            <h1>Hello</h1>
+            <h1 class="text-white">Error fetching page</h1>
         </main>
-      <main-right-side-bar /> 
+      </slot>
+      <slot name="aside">
+        <main-right-side-bar /> 
+      </slot>
     </div>
 </template>
 

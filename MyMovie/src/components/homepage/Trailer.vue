@@ -1,8 +1,17 @@
+<script setup>
+import {API_IMAGE_BASE_URL} from '@/constants/api-constants'
+defineProps(
+    {
+        title : String,
+        imageBackground : String
+    }
+)
+</script>
+
 <template>
     <div class="trailer-container">
-        <!-- image background doesn't work ??????????????? -->
         <div
-        :class="`bg-[url(${imageBackground})]`"
+        :style="{ 'background-image' : `url(${API_IMAGE_BASE_URL}/w780${imageBackground})` }"
         class="h-40 w-[23%] min-w-[14rem] bg-center bg-cover rounded-2xl overflow-hidden"
         >
         <div
@@ -13,7 +22,7 @@
                 class="bg-slate-200 bg-opacity-20 inline-block p-3 rounded-full"
             >
                 <img
-                src="../assets/play-btn.png"
+                src="@/assets/play-btn.png"
                 alt="play btn"
                 class="w-6 h-6"
                 />
@@ -25,11 +34,3 @@
     </div>
 </template>
 
-<script>
-export default {
-    props : {
-        title : String,
-        imageBackground : String
-    }
-};
-</script>

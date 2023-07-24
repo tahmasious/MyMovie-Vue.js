@@ -1,5 +1,5 @@
 <template>
-    <section class="movie-poster-container p-8">
+    <section class="movie-poster-container ">
         <div class="flex justify-between items-center">
           <h2 class="text-white text-lg"><slot>Movies</slot></h2>
           <div><RedLinkBtn text="see all" href="#" /></div>
@@ -11,7 +11,10 @@
         </div>
         <div class="flex flex-wrap justify-between">
         <div v-for="movie in movies" :key="movie.id">
-            <MainMovieCard :movie="movie" /> 
+            <Trailer 
+            :title="movie.title"
+            :imageBackground="movie.backdrop_path"
+            />
           </div>
         </div>
       </section>
@@ -20,7 +23,7 @@
 
 <script setup>
 import { ref, watch } from 'vue';
-import MainMovieCard from '@/components/general/MainMovieCard.vue';
+import Trailer from '@/components/homepage/Trailer.vue';
 import RedLinkBtn from '@/components/general/RedLinkBtn.vue'
 import {client} from '@/utils'
 
@@ -34,7 +37,7 @@ const movies = ref('');
 
 watch(activeTab, () => {
     const res = client(props.options[activeTab.value]);
-    res.then(data => movies.value = data.results.slice(0,6))
+    res.then(data => movies.value = data.results.slice(0,4))
 }, {immediate : true})
 
 

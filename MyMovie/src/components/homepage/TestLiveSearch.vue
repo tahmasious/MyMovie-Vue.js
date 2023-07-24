@@ -18,9 +18,9 @@
   </template>
   
   <script setup>
-  import MainMovieCard from './general/MainMovieCard.vue';
-  import {client} from '../utils.js'
-  import {API_BASE_URL} from '../constants/api-constants'
+  import MainMovieCard from '../general/MainMovieCard.vue';
+  import {client} from '../../utils.js'
+  import {API_BASE_URL} from '../../constants/api-constants'
 
   import {  ref, watch } from 'vue';
   const searchTerm = ref('')

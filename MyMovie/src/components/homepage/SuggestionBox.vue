@@ -6,17 +6,16 @@
           <div class="suggestion-box relative h-96 w-full">
             <div
               class="background-image rounded-3xl absolute left-0 top-0 w-full h-full z-10"
-              :style="{ 'background-image' : 'url(' + backgroundImage + ')' }"
+              :style="{ 'background-image' : `url(${API_IMAGE_BASE_URL}/w780${popularMovie.backdrop_path})` }"
             ></div>
             <div
               class="content z-20 absolute left-0 flex bottom-0 h-full w-full flex-col justify-end p-10"
             >
               <div class="movie-title-container">
-                <h3 class="movie-title text-white text-5xl">{{ title }}</h3>
-                <h4 class="mb-7 text-gray-300">{{ description }}</h4>
+                <h3 class="movie-title text-white text-5xl mb-7">{{ popularMovie.title }}</h3>
                 <div class="flex items-center gap-6">
-                  <primary-btn>More Detail</primary-btn>
-                  <add-to-watch-list-btn />
+                  <primary-btn v-if="popularMovie.id" :href="href" px="12px" py="16px">More Detail</primary-btn>
+                  <add-to-watch-list-btn px="9px" py="9px" />
                 </div>
               </div>
             </div>
@@ -26,13 +25,23 @@
 </template>
 
 <script setup>
-import AddToWatchListBtn from './general/AddToWatchListBtn.vue';
-import PrimaryBtn from './general/PrimaryBtn.vue';
-defineProps([
-  'backgroundImage',
-  'title',
-  'description'
-])
+import AddToWatchListBtn from '@/components/general/AddToWatchListBtn.vue';
+import PrimaryBtn from '@/components/general/PrimaryBtn.vue';
+import {API_BASE_URL,API_IMAGE_BASE_URL} from '@/constants/api-constants';
+import {client} from '@/utils.js'
+import { reactive, ref } from 'vue';
+
+
+const popularMovie = ref('')
+const res = client(`${API_BASE_URL}3/movie/popular`);
+
+const href = reactive({
+  name : 'movieDetail', params : {id :popularMovie.value.id}
+})
+res.then(data => {
+  popularMovie.value = data.results[0];
+})
+
 </script>
 
 <style scoped>
