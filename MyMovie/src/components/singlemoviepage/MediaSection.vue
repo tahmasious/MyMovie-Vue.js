@@ -56,7 +56,7 @@ watch([activeTab, isLoading], () => {
             BaseURLWidth.value = `/w185`
         }
     }
-}, {immediate : true})
+})
 </script>
 
 <style scoped>
