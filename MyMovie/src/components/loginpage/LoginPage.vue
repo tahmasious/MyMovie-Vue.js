@@ -35,7 +35,7 @@
           <p class="error" id="username"></p>
           <label for="password" class="hidden"></label>
           <input
-            type="text"
+            type="password"
             name="password"
             placeholder="Password"
             class="border-[3px] border-primary rounded-3xl block bg-transparent p-3 outline-none w-full"
@@ -49,6 +49,11 @@
           class="text-primary text-sm text-center p-5 inline-block"
           >Sign Up</a
         >
+        <router-link :to="{name : 'home'}"
+          href="https://www.themoviedb.org/signup"
+          class="text-primary text-sm text-center p-5 inline-block"
+          >return home</router-link
+        >
       </section>
     </main>
 </template>
@@ -57,13 +62,14 @@
 import Logo from '@/assets/logo.png'
 import { ref, inject } from 'vue'
 import { useRouter } from 'vue-router';
-const isLogged = inject('is_logged').value;
-console.log(isLogged.value);
+
+const isLogged = inject('is_logged')();
 const username = ref('');
 const password = ref('');
 const router = useRouter()
 const err = ref('') ;
 const login = inject('login');
+
 async function signin() {
     try {
         await login(username.value, password.value)

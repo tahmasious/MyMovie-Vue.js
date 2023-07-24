@@ -11,7 +11,9 @@ export function useAuth(app) {
     const LOGIN = 'login'
     const USER = 'user'
     const LOGOUT = 'logout'
-    const isLogged = ref(false)
+    const isLogged = () => {
+        return sessionStorage.getItem(USER) != null
+    }
 
     const userID = computed({
         get : () => JSON.parse(sessionStorage.getItem(USER) || 'null'),
@@ -100,14 +102,12 @@ export function useAuth(app) {
         await validateWithLogin(requestToken, username, password)
         await createSession(requestToken)
         userID.value =  await getAccountData()
-        isLogged.value = true
     }
 
     function logout() {
         sessionStorage.clear()
-        isLogged.value = false;
     }
-    
+
     app.provide('is_logged', isLogged)
     app.provide(LOGIN, login);
     app.provide(LOGOUT, logout)

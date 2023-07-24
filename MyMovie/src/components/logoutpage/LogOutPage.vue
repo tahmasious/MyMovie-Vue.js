@@ -27,9 +27,10 @@
 import LogOutIcon from '../../assets/logout-big.png'
 import { useRouter } from 'vue-router';
 import { inject } from 'vue';
+
 const router = useRouter()
 const logout = inject('logout');
-console.log(logout);
+
 function clearSessionStorage() {
     logout();
     router.replace({name : 'login'}) 
