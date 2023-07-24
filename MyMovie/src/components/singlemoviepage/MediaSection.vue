@@ -4,17 +4,9 @@
         <div
         class="selector-container mb-3 text-secondary flex justify-start gap-4 text-md"
         >
-            <span @click="activeTab = 'Backdrops'" 
-                :class="{'active-selector' : activeTab == 'Backdrops'}">
-                Backdrops
-            </span>
-            <span @click="activeTab = 'Logos'" 
-                  :class="{'active-selector' : activeTab == 'Logos'}">
-                    Logos
-            </span>
-            <span @click="activeTab = 'Posters'" 
-                :class="{'active-selector' : activeTab == 'Posters'}">
-                Posters
+            <span v-for="(option, index) in options" :key="index" @click="activeTab = option" 
+                :class="{'active-selector' : activeTab == option}">
+                {{option}}
             </span>
         </div>
         <div
@@ -42,6 +34,12 @@ const route = useRoute();
 const activeTab = ref('Backdrops')
 const Images = ref([''])
 const BaseURLWidth = ref('/w780')
+
+const options = [
+    'Backdrops',
+    'Logos',
+    'Posters'
+]
 
 const {data , isLoading, error,fetchWrapper} = useFetch()
 fetchWrapper(`${API_BASE_URL}3/movie/${route.params.id}/images`)
