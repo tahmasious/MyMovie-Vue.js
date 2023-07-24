@@ -9,10 +9,7 @@
     <div v-else-if="error"></div>
     <div v-else class="flex flex-wrap justify-between">
         <PeopleCard v-for="person in data.results.slice(0,6)" :key="person.id" 
-            :name="person.name"
-            :image-path="person.profile_path"
-            :known-credit="person.popularity"
-            :personID="person.id"
+            :person="person"
         />
     </div>
 </section>    
