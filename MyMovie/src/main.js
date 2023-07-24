@@ -8,6 +8,10 @@ const app = createApp(App)
 app.use(router)
 useAuth(app)
 router.beforeEach((to, from) => {
+    const title = to.meta.title
+    if (title) {
+        document.title = title
+    }
     if (to.meta.requiresLogin && !inject('is_logged')()){
         router.push({name : 'login'})
     }
