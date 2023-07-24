@@ -19,45 +19,13 @@
         <div v-else class="flex-col items-center">
             <p class="text-sm">How do you rate this movie ?</p>
             <div class="star-box flex">
-                
                 <img
+                v-for="n in 5" :key="n"
                 src="@/assets/rate.png"
                 alt="rate btn"
                 class="inline-block w-6 h-6"
-                @click="submitRate(2)"
-                @mouseover="changeColor(1)"
-                @mouseleave="resetColors"
-                />
-                <img
-                src="@/assets/rate.png"
-                alt="rate btn"
-                class="inline-block w-6 h-6"
-                @click="submitRate(4)"
-                @mouseover="changeColor(2)"
-                @mouseleave="resetColors"
-                />
-                <img
-                src="@/assets/rate.png"
-                alt="rate btn"
-                class="inline-block w-6 h-6"
-                @click="submitRate(6)"
-                @mouseover="changeColor(3)"
-                @mouseleave="resetColors"
-                />
-                <img
-                src="@/assets/rate.png"
-                alt="rate btn"
-                class="inline-block w-6 h-6"
-                @click="submitRate(8)"
-                @mouseover="changeColor(4)"
-                @mouseleave="resetColors"
-                />
-                <img
-                src="@/assets/rate.png"
-                alt="rate btn"
-                class="inline-block w-6 h-6"
-                @click="submitRate(10)"
-                @mouseover="changeColor(5)"
+                @click="submitRate(n * 2)"
+                @mouseover="changeColor(n)"
                 @mouseleave="resetColors"
                 />
             </div>
