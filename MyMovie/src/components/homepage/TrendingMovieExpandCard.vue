@@ -12,7 +12,7 @@
             <span class="text-[#CCCCCC]">{{new Date(movie.release_date).getFullYear()}}</span>
             <div class="flex justify-between items-center">
             <primary-btn :href="{name : 'movieDetail', params : {id : movie.id}}"  px="7px" py="10px" />
-            <add-to-watch-list-btn px="5px" py="7px"></add-to-watch-list-btn>
+            <add-to-watch-list-btn media_type="movie" :media_id="movie.id" px="5px" py="7px"></add-to-watch-list-btn>
             </div>
         </div>
         </div>
