@@ -22,8 +22,10 @@
 import {API_BASE_URL} from '@/constants/api-constants'
 import PeopleCard from './PeopleCard.vue';
 import {useFetch} from '@/composable/useFetch.js'
+import {onBeforeMount } from 'vue';
 const {data ,isLoading, error, fetchWrapper} = useFetch(); 
 
-fetchWrapper(`${API_BASE_URL}3/person/popular`);
-
+onBeforeMount(async () => {
+    await fetchWrapper(`${API_BASE_URL}3/person/popular`);
+})
 </script>
