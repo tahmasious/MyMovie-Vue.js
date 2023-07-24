@@ -6,7 +6,7 @@
                 <SearchAndNavigation></SearchAndNavigation>
                 <ProfileContainer />
             </header>
-            <!-- <suggestion-box title="Hello mother fucker"></suggestion-box> -->
+            <suggestion-box></suggestion-box>
             <rows-of-trailers :options="options" />
             <RowsOfTrendingMovies>Trending movies</RowsOfTrendingMovies>
         </main>

@@ -15,7 +15,7 @@
                 <h3 class="movie-title text-white text-5xl mb-7">{{ popularMovie.title }}</h3>
                 <div class="flex items-center gap-6">
                   <primary-btn v-if="popularMovie.id" :href="href" px="12px" py="16px">More Detail</primary-btn>
-                  <add-to-watch-list-btn px="9px" py="9px" />
+                  <add-to-watch-list-btn media_type="movie" :media_id="popularMovie.id" px="9px" py="9px" />
                 </div>
               </div>
             </div>
@@ -29,15 +29,22 @@ import AddToWatchListBtn from '@/components/general/AddToWatchListBtn.vue';
 import PrimaryBtn from '@/components/general/PrimaryBtn.vue';
 import {API_BASE_URL,API_IMAGE_BASE_URL} from '@/constants/api-constants';
 import {client} from '@/utils.js'
-import { reactive, ref } from 'vue';
-
+import { onBeforeMount, reactive, ref } from 'vue';
+import {useFetch} from '@/composable/useFetch.js'
 
 const popularMovie = ref('')
-const res = client(`${API_BASE_URL}3/movie/popular`);
+const href = ref('')
 
-const href = reactive({
-  name : 'movieDetail', params : {id :popularMovie.value.id}
+const {data , isLoading, error,fetchWrapper} = useFetch([])
+onBeforeMount(async () => {
+  await fetchWrapper('3/movie/popular');
+  console.log(data.value);
+  popularMovie.value = data.value.results[0];
+  href.value = {
+      name : 'movieDetail', params : {id :popularMovie.value.id}
+    }
 })
+const res = client(`${API_BASE_URL}3/movie/popular`);
 res.then(data => {
   popularMovie.value = data.results[0];
 })
