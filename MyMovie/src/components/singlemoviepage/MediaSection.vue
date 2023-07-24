@@ -26,7 +26,7 @@
 
 <script setup>
 import {useFetch} from '@/composable/useFetch.js'
-import {API_BASE_URL , API_IMAGE_BASE_URL} from '@/constants/api-constants'
+import { API_IMAGE_BASE_URL} from '@/constants/api-constants'
 import { ref, watch, watchEffect } from 'vue';
 import { useRoute } from 'vue-router';
 
@@ -42,7 +42,7 @@ const options = [
 ]
 
 const {data , isLoading, error,fetchWrapper} = useFetch()
-fetchWrapper(`${API_BASE_URL}3/movie/${route.params.id}/images`)
+fetchWrapper(`3/movie/${route.params.id}/images`)
 watch([activeTab, isLoading], () => {
     if (!isLoading.value) {
         if (activeTab.value == 'Backdrops'){

@@ -46,7 +46,7 @@ const sessionID = sessionStorage.getItem('session_id')
 
 
 function submitRate(val) {
-    fetchWrapper(`${API_BASE_URL}3/movie/${route.params.id}/rating?session_id=${sessionID}`, {'value' : val}, 'POST');
+    fetchWrapper(`3/movie/${route.params.id}/rating?session_id=${sessionID}`, {'value' : val}, 'POST');
 }
 
 function changeColor(val) {

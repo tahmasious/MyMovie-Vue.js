@@ -49,14 +49,13 @@ const props = defineProps({
     })
 
 import {useFetch} from '@/composable/useFetch.js'
-import {API_BASE_URL} from '@/constants/api-constants'
 import { inject } from 'vue';
 
 const {data , isLoading, error,fetchWrapper} = useFetch([])
 
 const userData = inject('user');
 function addToWatchList() {
-    fetchWrapper(`${API_BASE_URL}3/account/${userData.value.id}/watchlist`, {'media_type': props.media_type, 'media_id': props.media_id, 'watchlist': true}, 'POST');
+    fetchWrapper(`3/account/${userData.value.id}/watchlist`, {'media_type': props.media_type, 'media_id': props.media_id, 'watchlist': true}, 'POST');
 }
 
 </script>

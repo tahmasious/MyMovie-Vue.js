@@ -30,7 +30,7 @@ const page = ref(1)
 const listOfMovies = ref([])
 
 watch(page,async () => {
-    await fetchWrapper(`${API_BASE_URL}3/person/popular?page=${page.value}`);
+    await fetchWrapper(`3/person/popular?page=${page.value}`);
     listOfMovies.value.push(...data.value.results)
 },{immediate : true})
 </script>

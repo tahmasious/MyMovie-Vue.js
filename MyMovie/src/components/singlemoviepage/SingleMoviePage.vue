@@ -130,7 +130,7 @@ import RecommendedMovies from '@/components/singlemoviepage/RecommendedMovies.vu
 import MainLayOut from '@/components/general/MainLayOut.vue';
 import RowOfMainMovieCard from '@/components/general/RowOfMainMovieCard.vue';
 import {useFetch} from '@/composable/useFetch.js'
-import {API_BASE_URL , API_IMAGE_BASE_URL} from '@/constants/api-constants'
+import { API_IMAGE_BASE_URL} from '@/constants/api-constants'
 import { computed, ref, watch } from 'vue';
 import LoadingGif from '@/assets/loader.gif'
 import GlassySearchBarVue from '@/components/general/GlassySearchBar.vue';
@@ -145,7 +145,7 @@ const {data ,isLoading, error, fetchWrapper} = useFetch()
 
 
 watch(() => route.params.id , () => {
-  fetchWrapper(`${API_BASE_URL}3/movie/${route.params.id}`)
+  fetchWrapper(`3/movie/${route.params.id}`)
 }, {immediate : true})
 
 const releaseYear = computed(() => {

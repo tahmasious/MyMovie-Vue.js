@@ -23,6 +23,6 @@ import {onBeforeMount } from 'vue';
 const {data ,isLoading, error, fetchWrapper} = useFetch(); 
 
 onBeforeMount(async () => {
-    await fetchWrapper(`${API_BASE_URL}3/person/popular`);
+    await fetchWrapper(`3/person/popular`);
 })
 </script>

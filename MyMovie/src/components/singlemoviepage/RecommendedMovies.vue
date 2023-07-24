@@ -13,11 +13,10 @@
 import {useFetch} from '@/composable/useFetch.js'
 import RowOfMainMovieCard from '@/components/general/RowOfMainMovieCard.vue' 
 import { useRoute } from 'vue-router';
-import {API_BASE_URL} from '@/constants/api-constants'
 import { ref } from 'vue';
 const {data , fetchWrapper} = useFetch({'results' : []})
 const route = useRoute(); 
-fetchWrapper(`${API_BASE_URL}3/movie/${route.params.id}/recommendations`)
+fetchWrapper(`3/movie/${route.params.id}/recommendations`)
 
 const RecCount = ref(6)
 const isShowingAll = ref(false)

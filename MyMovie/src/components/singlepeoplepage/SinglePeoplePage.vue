@@ -31,7 +31,7 @@ import { useRoute } from 'vue-router';
 import MainLayOut from '@/components/general/MainLayOut.vue';
 import RightSideBar from '@/components/singlepeoplepage/RightSideBar.vue'
 import {useFetch} from '@/composable/useFetch.js'
-import {API_BASE_URL , API_IMAGE_BASE_URL} from '@/constants/api-constants'
+import { API_IMAGE_BASE_URL} from '@/constants/api-constants'
 import { computed, ref, watch } from 'vue';
 import SocialSection from '@/components/singlepeoplepage/SocialSection.vue'
 import RowsOfKnownForMovies from '../../components/singlepeoplepage/RowsOfKnownForMovies.vue';
@@ -39,7 +39,7 @@ const route = useRoute();
 const {data ,isLoading, error, fetchWrapper} = useFetch({})
 
 watch(() => route.params.id , () => {
-    fetchWrapper(`${API_BASE_URL}3/person/${route.params.id}`)
+    fetchWrapper(`3/person/${route.params.id}`)
 }, {immediate : true})
 
 

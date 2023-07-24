@@ -1,5 +1,6 @@
 import { ref } from "vue";
 import { client } from '@/utils.js'
+import {API_BASE_URL} from '@/constants/api-constants'
 
 export function useFetch(init = null){
     const isLoading = ref('')
@@ -10,7 +11,7 @@ export function useFetch(init = null){
         try {
             error.value = null
             isLoading.value = true
-            const res = await client(url, ops, method)
+            const res = await client(url.includes(API_BASE_URL) ? url : `${API_BASE_URL}${url}`, ops, method)
             data.value = res ;
         } catch(err) {
             error.value = err.message;
