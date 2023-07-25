@@ -7,10 +7,12 @@
             LOADING ...
         </div>
         <div v-else-if="error">{{ error }}</div>
-        <div v-else class="flex flex-wrap justify-between">
-            <PeopleCard v-for="person in showingResults.slice(0, showingCount)" :key="person.id" 
-                :person="person"
-            />
+        <div v-else >
+            <div class="flex flex-wrap justify-between">
+                <PeopleCard v-for="person in showingResults.slice(0, showingCount)" :key="person.id" 
+                    :person="person"
+                />
+            </div>
             <p v-if="resultCount == 0" class="text-white" >Nothing found :(</p>
             <div v-else class="w-[120px] text-center m-auto">
                 <button
