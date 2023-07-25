@@ -8,9 +8,10 @@
             src="@/assets/search.png"
             alt="search icon"
         />
-        <form class="inline" action="./search-resault.html">
+        <form class="inline" @submit.prevent="submitFrom">
             <input
-            class="inline bg-transparent placeholder-secondary"
+            v-model="searchQuery"
+            class="inline bg-transparent placeholder-secondary text-white"
             placeholder="Search..."
             type="text"
             name="q"
@@ -19,6 +20,18 @@
         </div>
     </div>
 </template>
+
+<script setup>
+import { ref } from "vue";
+import { useRouter } from "vue-router";
+
+const searchQuery = ref('')
+const router = useRouter()
+
+function submitFrom() {
+    router.push({name : 'result', query : {query : searchQuery.value}})
+}
+</script>
 
 <style scoped>
 .searchbar {
