@@ -27,18 +27,9 @@ import {API_IMAGE_BASE_URL} from '@/constants/api-constants'
 import {getGenreNamesByIDs} from '@/utils' ;
 import { RouterLink } from 'vue-router';
 
-// const props = defineProps({
-//   MovieID : String,
-//   src: String,
-//   rating: Number,
-//   releaseDate: String,
-//   title: String,
-//   genreID : String
-// })
 const props = defineProps(['movie'])
 const year = computed(() =>  new Date(props.movie.release_date ? props.movie.release_date : props.movie.first_air_date).getFullYear())
 const mainGenre = ref('');
-console.log(props);
 const res = getGenreNamesByIDs([props.movie.genre_ids[0]]);
 res.then(data => mainGenre.value = data[0])
 </script>
