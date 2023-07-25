@@ -10,7 +10,7 @@ useAuth(app)
 router.beforeEach((to, from) => {
     const title = to.meta.title
     if (title) {
-        document.title = title
+        document.title = `${title} | MyMovie`
     }
     if (to.meta.requiresLogin && !inject('is_logged')()){
         router.push({name : 'login'})

@@ -45,11 +45,8 @@ watch(route, () => {
 
 
 watch(data, ()=> {
-    console.log(data.value);
     if(!isLoading.value){
-        console.log(isLoading.value);
         showingResults.value.push(...(data.value.results));
-        console.log(showingResults.value);
     }
 })
 
