@@ -38,7 +38,6 @@ const href = ref('')
 const {data , isLoading, error,fetchWrapper} = useFetch([])
 onBeforeMount(async () => {
   await fetchWrapper('3/movie/popular');
-  console.log(data.value);
   popularMovie.value = data.value.results[0];
   href.value = {
       name : 'movieDetail', params : {id :popularMovie.value.id}
