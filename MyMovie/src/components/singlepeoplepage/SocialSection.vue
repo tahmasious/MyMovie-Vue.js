@@ -38,6 +38,9 @@ const route = useRoute();
 const {data ,isLoading, error, fetchWrapper} = useFetch()
 fetchWrapper(`3/person/${route.params.id}/external_ids`)
 const hasSocial = computed(() => {
-    return data.instagram_id || data.facebook_id || data.twitter_id
+    if (!isLoading.value){
+        return data.value.instagram_id || data.value.facebook_id || data.value.twitter_id
+    }
+    return false
 })
 </script>
