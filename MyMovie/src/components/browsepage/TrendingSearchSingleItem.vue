@@ -1,5 +1,5 @@
 <template>
-    <router-link to="#"
+    <router-link :to="{name : 'result', query : {'query' : title}}"
         class="flex justify-start gap-2 p-2 items-center mb-2 bg-secondary rounded-xl"
         >
         <img
