@@ -22,8 +22,9 @@
               src="@/assets/search.png"
               alt="search icon"
             />
-            <form class="inline" action="#">
+            <form class="inline" @submit.prevent="submitFrom">
               <input
+                v-model="searchQuery"
                 class="inline bg-transparent placeholder-secondary"
                 placeholder="Search..."
                 type="text"
@@ -35,6 +36,16 @@
 </template>
 
 <script setup>
+import { ref } from "vue";
+import { useRouter } from "vue-router";
+
+const searchQuery = ref('')
+const router = useRouter()
+
+function submitFrom() {
+    router.push({name : 'result', query : {query : searchQuery.value}})
+}
+
 function goBack() {
     window.history.back();
 }
