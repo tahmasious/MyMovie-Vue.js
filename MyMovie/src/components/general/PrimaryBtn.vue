@@ -1,8 +1,8 @@
 <!-- why padding doesn't work !!! -->
 <template>
     <router-link :to="href"
-    class="bg-primary rounded-xl inline-block text-white shadow-lg shadow-primary-dark text-sm"
-    :style="{padding : `${px} ${py}`}"
+    class="bg-primary rounded-xl text-white shadow-lg shadow-primary-dark text-sm flex flex-col justify-center"
+    :style="{padding : `${py} ${px}`}"
     ><slot>More Detail</slot>
     </router-link>
 </template>
