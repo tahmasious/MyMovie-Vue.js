@@ -4,26 +4,35 @@
     :style="{padding : `${px} ${py}`}"
     :class="{'glss-bg' : isGlassy, 'normal-btn' : !isGlassy}"
     >
+    <div v-if="!isInWatchList.data.value.watchlist">
+        <img
+            v-if="isLoading"
+            src="@/assets/spinner.gif"
+            alt="#"
+            class="inline-block w-8 h-8"
+        />
+        <img
+            v-else-if="data.success"
+            @click="addToWatchList"
+            src="@/assets/check.png"
+            alt="#"
+            class="inline-block w-6 h-6"
+        />
+        <img
+            v-else
+            @click="addToWatchList"
+            src="@/assets/plus.png"
+            alt="#"
+            class="inline-block w-6 h-6"
+        />
+    </div>
     <img
-        v-if="isLoading"
-        src="@/assets/spinner.gif"
-        alt="#"
-        class="inline-block w-8 h-8"
-    />
-    <img
-        v-else-if="data.success"
+        v-else
         @click="addToWatchList"
         src="@/assets/check.png"
         alt="#"
         class="inline-block w-6 h-6"
-    />
-    <img
-        v-else
-        @click="addToWatchList"
-        src="@/assets/plus.png"
-        alt="#"
-        class="inline-block w-6 h-6"
-    />
+        />
     </a>
 </template>
 
@@ -49,11 +58,20 @@ const props = defineProps({
     })
 
 import {useFetch} from '@/composable/useFetch.js'
-import { inject } from 'vue';
+import { inject, onBeforeMount, watch } from 'vue';
 
 const {data , isLoading, error,fetchWrapper} = useFetch([])
-
+const isInWatchList = useFetch([])
 const userData = inject('user');
+
+onBeforeMount(()=> {
+    isInWatchList.fetchWrapper(`3/${props.media_type}/${props.media_id}/account_states`)
+})
+
+watch(isInWatchList.data, ()=> {
+    console.log(isInWatchList.data.value.watchlist);
+})
+
 function addToWatchList() {
     fetchWrapper(`3/account/${userData.value.id}/watchlist`, {'media_type': props.media_type, 'media_id': props.media_id, 'watchlist': true}, 'POST');
 }

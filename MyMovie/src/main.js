@@ -7,7 +7,6 @@ import {useGenres} from  '@/composable/useGenres'
 
 const app = createApp(App)
 app.use(router)
-await useGenres(app)
 useAuth(app)
 router.beforeEach((to, from) => {
     const title = to.meta.title
@@ -18,4 +17,5 @@ router.beforeEach((to, from) => {
         router.push({name : 'login'})
     }
 })
+await useGenres(app)
 app.mount('#app')
