@@ -7,7 +7,7 @@ import {useGenres} from  '@/composable/useGenres'
 
 const app = createApp(App)
 app.use(router)
-useGenres(app)
+await useGenres(app)
 useAuth(app)
 router.beforeEach((to, from) => {
     const title = to.meta.title
