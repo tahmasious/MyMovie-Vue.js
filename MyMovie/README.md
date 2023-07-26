@@ -1,7 +1,34 @@
-# Vue 3 + Vite
+# MyMovie Project
 
-This template should help get you started developing with Vue 3 in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+This project is a front-end client for themoviedb.org, a website similar to IMDB, API's.
+there is Millions of movies, TV shows and people to discover in this website.
 
-## Recommended IDE Setup
+## Main used technologies are :
 
-- [VS Code](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
+- HTML/CSS
+- tailwind
+- Vuejs
+
+---
+
+# How to Install and Run the Project
+
+1 - first clone the project
+
+```
+git clone 'https://github.com/tahmasious/MyMovie-Vue.js.git' .
+```
+
+2 - Go to prject's root directory
+
+```
+cd MyMovie
+```
+
+3 - Star the project !
+
+```
+npm run dev
+```
+
+**_Merge request are welcome :)_**
