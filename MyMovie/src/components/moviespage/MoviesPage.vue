@@ -50,7 +50,6 @@ watch([page, params], ([newPage, newParam], [oldPage, oldParams]) => {
 watch(data, ()=> {
     if (!isLoading.value){
         results.value.push(...(data.value.results))
-        console.log(data.value);
     }
 })
 </script>
