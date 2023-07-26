@@ -17,5 +17,5 @@ router.beforeEach((to, from) => {
         router.push({name : 'login'})
     }
 })
-await useGenres(app)
+useGenres(app)
 app.mount('#app')
