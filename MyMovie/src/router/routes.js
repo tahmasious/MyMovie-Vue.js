@@ -8,7 +8,7 @@ import LogOutPage from '@/components/logoutpage/LogOutPage.vue'
 import WatchListPage from '@/components/watchlistpage/WatchListPage.vue'
 import SearchResultPage from '@/components/searchresultpage/SearchResultPage.vue'
 import MoviesPage from '@/components/moviespage/MoviesPage.vue'
-import TVpage from '@/components/tvpage/TVpage.vue'
+import TVpage from '@/components/tvpage/TVPage.vue'
 import SettingPage from '@/components/settingpage/SettingPage.vue'
 
 export const routes = [
