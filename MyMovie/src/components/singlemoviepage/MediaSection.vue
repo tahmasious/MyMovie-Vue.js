@@ -27,8 +27,9 @@
 <script setup>
 import {useFetch} from '@/composable/useFetch.js'
 import { API_IMAGE_BASE_URL} from '@/constants/api-constants'
-import { ref, watch, watchEffect } from 'vue';
+import { inject, ref, watch, watchEffect } from 'vue';
 import { useRoute } from 'vue-router';
+import { GENRES } from '../../keys';
 
 const route = useRoute(); 
 const activeTab = ref('Backdrops')
