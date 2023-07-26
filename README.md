@@ -31,5 +31,4 @@ cd MyMovie
 npm run dev
 ```
 
-**_Merge request are welcome :)_**
-
+**_Merge requests are welcome :)_**
