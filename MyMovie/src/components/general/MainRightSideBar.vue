@@ -13,7 +13,7 @@
             :movieID="movie.id"
             />
           </div>
-          <RedLinkBtn text="see all" href="#" />
+          <!-- <RedLinkBtn text="see all" href="#" /> -->
         </section>
         <!-- upcoming movies bar -->
         <section>
@@ -28,7 +28,7 @@
             :movieID="movie.id"
             />
           </div>
-          <RedLinkBtn text="see all" href="#" />
+          <!-- <RedLinkBtn text="see all" href="#" /> -->
         </section>
       </section>
     </aside>
